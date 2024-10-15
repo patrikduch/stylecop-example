@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>f91c94bd-d918-4f49-85bc-da79588f7bfa</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <RootNamespace>StyleCop</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
