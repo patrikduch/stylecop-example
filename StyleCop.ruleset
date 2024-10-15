@@ -2,10 +2,11 @@
 <RuleSet Name="StyleCop Rules" Description="Custom StyleCop rule set" ToolsVersion="16.0">
   <Rules AnalyzerId="StyleCopAnalyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA1200" Action="Error" /> <!-- Using directive should appear outside the namespace declaration -->
-    <Rule Id="SA1600" Action="None" /> <!-- Elements dpmt have to be documented -->
+    <Rule Id="SA1600" Action="None" /> <!-- Elements can be without comments. -->
     <Rule Id="SA1413" Action="Error" /> <!-- Use trailing comma in multi-line initializers -->
     <Rule Id="SA1309" Action="None" /> <!-- Field names should can begin with an underscore -->
     <Rule Id="SA1101" Action="Error" /> <!-- Prefix local calls with 'this.' -->
     <Rule Id="SA1633" Action="None" /> <!-- File header is not required -->
+    <Rule Id="SA1009" Action="Error" /> <!-- Closing parenthesis must be spaced correctly -->
   </Rules>
 </RuleSet>
