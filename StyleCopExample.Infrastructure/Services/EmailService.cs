@@ -1,6 +1,6 @@
-﻿namespace StyleCopExample.Infrastructure.Services;
+﻿using StyleCopExample.Application.Interfaces.Infrastructure;
 
-using StyleCopExample.Application.Interfaces.Infrastructure;
+namespace StyleCopExample.Infrastructure.Services;
 
 public class EmailService : IEmailService
 {

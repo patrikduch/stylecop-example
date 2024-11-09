@@ -1,6 +1,8 @@
-﻿namespace StyleCopExample.Infrastructure;
+﻿using Microsoft.Extensions.DependencyInjection;
+using StyleCopExample.Application.Interfaces.Infrastructure;
+using StyleCopExample.Infrastructure.Services;
 
-using Microsoft.Extensions.DependencyInjection;
+namespace StyleCopExample.Infrastructure;
 
 /// <summary>
 /// Registration of infrastructure services.
@@ -14,6 +16,8 @@ public static class InfrastructureServiceConfigurator
     /// <returns>Collection of DI services.</returns>
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
     {
+        services.AddScoped<IEmailService, EmailService>();
+
         return services;
     }
 }
