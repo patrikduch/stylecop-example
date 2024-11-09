@@ -1,4 +1,5 @@
 using StyleCopExample.Infrastructure;
+using StyleCopExample.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastructureServices();
+builder.Services.AddPersistenceServices();
 
 var app = builder.Build();
 

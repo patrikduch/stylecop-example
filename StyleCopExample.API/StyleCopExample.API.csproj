@@ -20,6 +20,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StyleCopExample.Infrastructure\StyleCopExample.Infrastructure.csproj" />
+    <ProjectReference Include="..\StyleCopExample.Persistence\StyleCopExample.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
   <PropertyGroup>
