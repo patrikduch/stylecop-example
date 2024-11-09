@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RuleSet Name="StyleCop Rules" Description="Custom StyleCop rule set" ToolsVersion="16.0">
   <Rules AnalyzerId="StyleCopAnalyzers" RuleNamespace="StyleCop.Analyzers">
-    <Rule Id="SA1200" Action="Error" /> <!-- Using directive should appear outside the namespace declaration -->
+    <Rule Id="SA1200" Action="None" /> <!-- Using directive can appear outside the namespace declaration when it is confiured as None -->
     <Rule Id="SA1600" Action="None" /> <!-- Elements can be without comments. -->
     <Rule Id="SA1413" Action="Error" /> <!-- Use trailing comma in multi-line initializers -->
     <Rule Id="SA1309" Action="None" /> <!-- Field names should can begin with an underscore -->

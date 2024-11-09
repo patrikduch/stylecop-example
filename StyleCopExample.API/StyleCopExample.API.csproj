@@ -18,6 +18,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\StyleCopExample.Infrastructure\StyleCopExample.Infrastructure.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
 	<CodeAnalysisRuleSet>$(SolutionDir)StyleCop.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
