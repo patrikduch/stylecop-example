@@ -47,6 +47,9 @@ using (var scope = app.Services.CreateScope())
         var context = services.GetRequiredService<ApplicationDbContext>();
         context.Database.Migrate();
 
+        // Seed orders after migration
+        await context.SeedOrdersAsync();
+
         logger.LogInformation("Database was successfully migrated.");
     }
     catch (Exception ex)
