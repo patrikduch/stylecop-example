@@ -1,6 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿namespace StyleCopExample.Persistence;
 
-namespace StyleCopExample.Persistence;
+using Diagnostics;
+using Microsoft.Extensions.DependencyInjection;
+using System.Diagnostics;
 
 /// <summary>
 /// Registration of Persistence services.
@@ -14,6 +16,9 @@ public static class PersistenceServiceConfigurator
     /// <returns>Collection of DI services.</returns>
     public static IServiceCollection AddPersistenceServices(this IServiceCollection services)
     {
+        var listener = new EfCoreDiagnosticListener();
+        DiagnosticListener.AllListeners.Subscribe(listener);
+
         return services;
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace StyleCop.Controllers;
+﻿using Microsoft.EntityFrameworkCore;
+using StyleCopExample.Persistence.Contexts;
+
+namespace StyleCop.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,9 +9,19 @@ using Microsoft.AspNetCore.Mvc;
 [ApiController]
 public class OrderController : ControllerBase
 {
-    [HttpGet]
-    public IActionResult GetOrders()
+    private readonly ApplicationDbContext _dbContext;
+
+    public OrderController(ApplicationDbContext dbContext)
     {
-        return Ok("a");
+        _dbContext = dbContext;
+    }
+
+
+    [HttpGet]
+    public async Task<IActionResult> GetOrders()
+    {
+        var result = await _dbContext.Orders.FirstOrDefaultAsync();
+
+        return Ok(result);
     }
 }
