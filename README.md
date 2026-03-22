@@ -6,3 +6,7 @@ Examples and best practices for integrating StyleCop into C# projects. Includes 
 ## Analyzers documentation
 
 https://github.com/DotNetAnalyzers/StyleCopAnalyzers/tree/master/documentation
+
+
+## License
+See [LICENSE](LICENSE).
