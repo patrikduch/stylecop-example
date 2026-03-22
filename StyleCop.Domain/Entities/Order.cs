@@ -4,5 +4,5 @@ public class Order
 {
     public Guid Id { get; set; }
 
-    public required string Name { get; set; }
+    required public string Name { get; set; }
 }

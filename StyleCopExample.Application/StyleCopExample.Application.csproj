@@ -10,4 +10,12 @@
 		<CodeAnalysisRuleSet>$(SolutionDir)StyleCop.ruleset</CodeAnalysisRuleSet>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <Folder Include="DTOs\Order\Requests\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\StyleCop.Domain\StyleCopExample.Domain.csproj" />
+	</ItemGroup>
+
 </Project>

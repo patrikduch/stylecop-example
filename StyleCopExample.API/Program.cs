@@ -35,7 +35,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 var app = builder.Build();
 
-
 // Apply migrations at startup
 using (var scope = app.Services.CreateScope())
 {

@@ -1,11 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using StyleCopExample.Persistence.Contexts;
-
-namespace StyleCop.Controllers;
+﻿namespace StyleCop.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using StyleCopExample.Application.Common;
+using StyleCopExample.Application.DTOs.Order.Responses;
+using StyleCopExample.Persistence.Contexts;
+using StyleCopExample.Application.Mappers;
 
-[Route("api/[controller]")]
+[Route("api/order")]
 [ApiController]
 public class OrderController : ControllerBase
 {
@@ -16,12 +18,20 @@ public class OrderController : ControllerBase
         _dbContext = dbContext;
     }
 
-
     [HttpGet]
-    public async Task<IActionResult> GetOrders()
+    [ProducesResponseType(typeof(ApiResponse<OrderResponseDTO>), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> GetFirstOrder()
     {
         var result = await _dbContext.Orders.FirstOrDefaultAsync();
 
-        return Ok(result);
+        if (result is null)
+        {
+            return NotFound(ApiResponse<OrderResponseDTO>.Fail("Order not found", 404));
+        }
+
+        return Ok(ApiResponse<OrderResponseDTO>.Ok(result.ToResponseDTO()));
     }
 }
